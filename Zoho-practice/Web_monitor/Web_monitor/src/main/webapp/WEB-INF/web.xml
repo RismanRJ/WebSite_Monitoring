@@ -1,0 +1,163 @@
+<web-app>
+
+    <!-- Session Timeout in Minutes -->
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
+
+    <!-- RegisterServlet -->
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>servlet.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
+    <!-- LoginServlet -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <!-- LogoutServlet -->
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>servlet.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <!-- AddMonitoredUrlServlet -->
+    <servlet>
+        <servlet-name>UrlMonitorServlet</servlet-name>
+        <servlet-class>servlet.UrlMonitorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UrlMonitorServlet</servlet-name>
+        <url-pattern>/add-url</url-pattern>
+    </servlet-mapping>
+
+    <!-- GetMonitoredUrlsServlet -->
+<!--    <servlet>-->
+<!--        <servlet-name>UrlMonitorServlet</servlet-name>-->
+<!--        <servlet-class>servlet.UrlMonitorServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>UrlMonitorServlet</servlet-name>-->
+<!--        <url-pattern>/get-monitored-urls</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+    <!-- GetResponseTimeDataServlet -->
+    <servlet>
+        <servlet-name>GetResponseTimesServlet</servlet-name>
+        <servlet-class>servlet.GetResponseTimesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetResponseTimesServlet</servlet-name>
+        <url-pattern>/get-response-data</url-pattern>
+    </servlet-mapping>
+
+
+<!--    Get All urls for user id-->
+
+    <servlet>
+        <servlet-name>GetAllUrls</servlet-name>
+        <servlet-class>servlet.GetAllUrls</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAllUrls</servlet-name>
+        <url-pattern>/get-urls</url-pattern>
+    </servlet-mapping>
+
+<!--    stop monitoring-->
+    <servlet>
+        <servlet-name>MonitoringStop</servlet-name>
+        <servlet-class>servlet.MonitoringStop</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MonitoringStop</servlet-name>
+        <url-pattern>/stop-monitor</url-pattern>
+    </servlet-mapping>
+
+<!--    Get Alerts for url Id-->
+    <servlet>
+        <servlet-name>GetResponseAlertsServlet</servlet-name>
+        <servlet-class>servlet.GetResponseAlertsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GetResponseAlertsServlet</servlet-name>
+        <url-pattern>/get-alerts</url-pattern>
+    </servlet-mapping>
+
+
+<!--    Resume Monitoring-->
+    <servlet>
+        <servlet-name>StartMonitoring</servlet-name>
+        <servlet-class>servlet.StartMonitoring</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>StartMonitoring</servlet-name>
+        <url-pattern>/start-monitoring</url-pattern>
+    </servlet-mapping>
+
+
+<!--    update URL servlet-->
+    <servlet>
+        <servlet-name>UpdateUrlServlet</servlet-name>
+        <servlet-class>servlet.UpdateUrlServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateUrlServlet</servlet-name>
+        <url-pattern>/update-url</url-pattern>
+    </servlet-mapping>
+
+<!--    Delete url monitoring-->
+    <servlet>
+        <servlet-name>DeleteMonitoringServlet</servlet-name>
+        <servlet-class>servlet.DeleteMonitoringServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DeleteMonitoringServlet</servlet-name>
+        <url-pattern>/delete-url</url-pattern>
+    </servlet-mapping>
+
+    <!-- TestServlet -->
+    <servlet>
+        <servlet-name>TestServlet</servlet-name>
+        <servlet-class>servlet.TestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+
+
+
+    <filter>
+        <filter-name>CORSFilter</filter-name>
+        <filter-class>servlet.CORSFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>CORSFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <listener>
+        <listener-class>util.MonitoringContextListener</listener-class>
+    </listener>
+
+
+</web-app>
